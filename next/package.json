@@ -8,7 +8,7 @@
   "scripts": {
     "build": "next build --no-lint",
     "dev": "next dev",
-    "start: "next build && next start",
+    "start": "next build && next start",
     "postinstall": "npx prisma generate && npx prisma db push && npm run build",
     "lint": "cross-env SKIP_ENV_VALIDATION=1 next lint --fix",
     "start": "next start",
