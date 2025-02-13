@@ -8,7 +8,7 @@
   "scripts": {
     "build": "next build --no-lint",
     "dev": "next dev",
-    "postinstall": "prisma generate",
+    "postinstall": "npx prisma generate && npx prisma db push",
     "lint": "cross-env SKIP_ENV_VALIDATION=1 next lint --fix",
     "start": "next start",
     "prepare": "cd .. && husky install next/.husky",
