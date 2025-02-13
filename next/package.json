@@ -6,14 +6,11 @@
     "node": ">=18.0.0 <19.0.0"
   },
   "scripts": {
-    "build": "next build --no-lint",
-    "dev": "next dev",
-    "start": "next start",
-    "postinstall": "npx prisma generate && npx prisma migrate deploy && next build",
-    "lint": "cross-env SKIP_ENV_VALIDATION=1 next lint --fix",
-    "prepare": "cd .. && husky install next/.husky",
-    "test": "cross-env SKIP_ENV_VALIDATION=1 jest"
-  },
+  "postinstall": "npx prisma generate",
+  "migrate": "npx prisma migrate deploy",
+  "build": "next build --no-lint",
+  "start": "npm run migrate && next start"
+},
   "dependencies": {
     "@headlessui/react": "^1.7.14",
     "@next-auth/prisma-adapter": "^1.0.0",
